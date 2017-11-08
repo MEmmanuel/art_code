@@ -1,0 +1,52 @@
+body {
+    background-color: #000;
+}
+
+input, button {
+    font-size: 200%;
+    margin-left: 10px;
+    height: 50px;
+}
+
+input {
+    width: 100px;
+    border-radius: 2px;
+    border: none;
+    padding-left: 10px;
+}
+
+.point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    -moz-box-shadow: 0 0 15px #fff;
+    -webkit-box-shadow: 0 0 15px #fff;
+    -o-box-shadow: 0 0 15px #fff;
+    box-shadow: 0 0 15px #fff;
+}
+
+.pointer {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+}
+
+.control {
+    border: none;
+    background: #fff;
+    border-radius: 2px;
+    width: 200px;
+}
+
+.start {
+    color: #2d2;
+}
+
+.stop {
+    color: #d22;
+}
