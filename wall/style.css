@@ -1,0 +1,40 @@
+body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+}
+
+div.dot {
+    transform-origin: 0 0;
+    position: absolute;
+    border-radius: 50%;
+}
+
+div.control {
+    color: grey;
+    font-family: monospace;
+    margin: 10px;
+}
+
+div input {
+    color: grey;
+    border: none;
+    background: none;
+}
+
+div button {
+    border: none;
+    background: grey;
+}
+
+div.indicator {
+    display: inline;
+}
+
+div.time {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    font-size: 45px;
+}
