@@ -1,0 +1,33 @@
+<head>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="control">
+        FORCE: <input id="forceInput" type="number" min="1" max="99">
+        <br>
+        INITIAL QUANTITY: <input id="initialQuantity" type="number" min="1">
+        <br>
+        <button id="restart">Restart</button>
+        <br><br>
+        LEFT: <div id="indicator" class="indicator"></div>
+        <div id="time" class="time">0</div>
+    </div>
+    <div id="container" class="container"></div>
+
+
+    <!--TOOLS-->
+    <script src="./tools.js"></script>
+
+    <!--MODELS-->
+    <script src="./dot.js"></script>
+
+    <!--CONFIG-->
+    <script src="./config.js"></script>
+
+    <!--CONTROLLER-->
+    <script src="./controller.js"></script>
+
+    <!--LOOP-->
+    <script src="./loop.js"></script>
+</body>
+
