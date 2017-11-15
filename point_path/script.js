@@ -1,14 +1,3 @@
-/* TOOLS */
-function cartesianToPolar(x, y) {
-    if (x == 0) {return [Math.sqrt(x*x+y*y), y>0 ? 90 : -90]}
-    return [Math.sqrt(x*x+y*y), Math.atan(y/x)]
-}
-
-function polarToCartesian(r, o) {
-    return [Math.round(r * Math.cos(o)), Math.round(r * Math.sin(o))]
-}
-/* TOOLS */
-
 var LOOP_COUNT, N, L;
 var ACTIVE = true;
 
