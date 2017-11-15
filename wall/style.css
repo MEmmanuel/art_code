@@ -1,7 +1,8 @@
 body {
-    background-color: #000;
+    background-color: grey;
     margin: 0;
     overflow: hidden;
+    cursor: pointer;
 }
 
 div.dot {
@@ -10,31 +11,8 @@ div.dot {
     border-radius: 50%;
 }
 
-div.control {
-    color: grey;
-    font-family: monospace;
-    margin: 10px;
-}
-
-div input {
-    color: grey;
-    border: none;
-    background: none;
-}
-
-div button {
-    border: none;
-    background: grey;
-}
-
-div.indicator {
-    display: inline;
-}
-
-div.time {
-    bottom: 0;
+div.container {
+    cursor: default;
+    background-color: #000;
     position: absolute;
-    right: 0;
-    margin: 10px;
-    font-size: 45px;
 }
