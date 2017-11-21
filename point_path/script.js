@@ -1,3 +1,5 @@
+mixpanel.track("Point_path: Page start");
+
 var LOOP_COUNT, N, L;
 var ACTIVE = true;
 
