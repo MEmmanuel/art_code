@@ -1,0 +1,27 @@
+body {
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+a {
+  color: white;
+  background: #111;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100px;
+  height: 20px;
+  font-size: 18px;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+}
