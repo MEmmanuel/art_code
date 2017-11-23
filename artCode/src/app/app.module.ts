@@ -10,10 +10,12 @@ import {AttractComponent} from './pages/attract/attract.component';
 import {PointPathComponent} from './pages/point_path/point_path.component';
 import {TangleComponent} from './pages/tangle/tangle.component';
 import {WallComponent} from './pages/wall/wall.component';
+import {LinkComponent} from './pages/link/link.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, AttractComponent, PointPathComponent, TangleComponent, WallComponent
+    AppComponent, HomeComponent, AttractComponent, PointPathComponent,
+    TangleComponent, WallComponent, LinkComponent
   ],
   imports: [
     BrowserModule,

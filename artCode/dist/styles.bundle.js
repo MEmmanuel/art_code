@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".contact {\n  margin-top: 20px;\n}\n\n.contact .icons {\n  margin: 0;\n}\n\n#footer {\n  margin-top: 1.5rem;\n}\n\niframe {\n  width: 100%;\n  border: none;\n}\n", ""]);
+exports.push([module.i, "body {\n  overflow: hidden;\n}\n\n.contact {\n  margin-top: 20px;\n}\n\n.contact .icons {\n  margin: 0;\n}\n\n#footer {\n  margin-top: 1.5rem;\n}\n\niframe {\n  width: 100%;\n  border: none;\n}\n\ndiv.header {\n  height: 50px;\n  background: #333;\n}\n\ndiv.header h1 {\n  color: grey !important;\n  font-size: 37px;\n  display: inline;\n  vertical-align: super;\n  margin-left: 20px;\n}\n\ndiv.header a {\n  cursor: pointer;\n  border: none;\n}\n", ""]);
 
 // exports
 

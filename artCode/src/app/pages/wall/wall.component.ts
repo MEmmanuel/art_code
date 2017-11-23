@@ -10,5 +10,5 @@ export class WallComponent implements OnInit {
 
   constructor(private window: WindowRef) {this.window.nativeWindow.mixpanel.track("Wall: Page start")}
 
-  ngOnInit() {document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'}
+  ngOnInit() {document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'}
 }

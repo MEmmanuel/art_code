@@ -29,6 +29,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tangle_tangle_component__ = __webpack_require__("../../../../../src/app/pages/tangle/tangle.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_attract_attract_component__ = __webpack_require__("../../../../../src/app/pages/attract/attract.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_wall_wall_component__ = __webpack_require__("../../../../../src/app/pages/wall/wall.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_link_link_component__ = __webpack_require__("../../../../../src/app/pages/link/link.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,12 +43,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_2__pages_home_home_component__["a" /* HomeComponent */] },
     { path: 'point_path', component: __WEBPACK_IMPORTED_MODULE_3__pages_point_path_point_path_component__["a" /* PointPathComponent */] },
     { path: 'tangle', component: __WEBPACK_IMPORTED_MODULE_4__pages_tangle_tangle_component__["a" /* TangleComponent */] },
     { path: 'attract', component: __WEBPACK_IMPORTED_MODULE_5__pages_attract_attract_component__["a" /* AttractComponent */] },
     { path: 'wall', component: __WEBPACK_IMPORTED_MODULE_6__pages_wall_wall_component__["a" /* WallComponent */] },
+    { path: 'link', component: __WEBPACK_IMPORTED_MODULE_7__pages_link_link_component__["a" /* LinkComponent */] },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -135,6 +138,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_point_path_point_path_component__ = __webpack_require__("../../../../../src/app/pages/point_path/point_path.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tangle_tangle_component__ = __webpack_require__("../../../../../src/app/pages/tangle/tangle.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_wall_wall_component__ = __webpack_require__("../../../../../src/app/pages/wall/wall.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_link_link_component__ = __webpack_require__("../../../../../src/app/pages/link/link.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -151,13 +155,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__pages_home_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_6__pages_attract_attract_component__["a" /* AttractComponent */], __WEBPACK_IMPORTED_MODULE_7__pages_point_path_point_path_component__["a" /* PointPathComponent */], __WEBPACK_IMPORTED_MODULE_8__pages_tangle_tangle_component__["a" /* TangleComponent */], __WEBPACK_IMPORTED_MODULE_9__pages_wall_wall_component__["a" /* WallComponent */]
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__pages_home_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_6__pages_attract_attract_component__["a" /* AttractComponent */], __WEBPACK_IMPORTED_MODULE_7__pages_point_path_point_path_component__["a" /* PointPathComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_tangle_tangle_component__["a" /* TangleComponent */], __WEBPACK_IMPORTED_MODULE_9__pages_wall_wall_component__["a" /* WallComponent */], __WEBPACK_IMPORTED_MODULE_10__pages_link_link_component__["a" /* LinkComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -195,7 +201,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/attract/attract.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<iframe src=\"apps/attract/index.html\"></iframe>\n"
+module.exports = "<div class=\"header\">\n  <h1><a href=\".\"><</a> Attract</h1>\n</div>\n<iframe src=\"apps/attract/index.html\"></iframe>\n"
 
 /***/ }),
 
@@ -222,7 +228,7 @@ var AttractComponent = (function () {
         this.window = window;
         this.window.nativeWindow.mixpanel.track("Attract: Page start");
     }
-    AttractComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'; };
+    AttractComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'; };
     AttractComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
             selector: 'app-attract',
@@ -259,7 +265,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Header -->\n  <header id=\"header\">\n    <div class=\"logo\">\n      <span class=\"icon fa-code\"></span>\n    </div>\n    <div class=\"content\">\n      <div class=\"inner\">\n        <h1>Art Code</h1>\n        <p>Art Code est un projet à but purement artistique.\n          Je créé des petits scripts permettant de dessiner des images animées,\n          jolies, parfois hypnotisantes. #CreativeCoding #javascript</p>\n      </div>\n    </div>\n    <nav>\n      <ul>\n        <li><a target=\"_blank\" href=\"point_path\">Point path</a></li>\n        <li><a target=\"_blank\" href=\"tangle\">Tangle</a></li>\n        <li><a target=\"_blank\" href=\"attract\">Attract</a></li>\n        <li><a target=\"_blank\" href=\"wall\">Wall</a></li>\n        <!--<li><a href=\"#elements\">Elements</a></li>-->\n      </ul>\n    </nav>\n  </header>\n\n  <div class=\"contact\">\n      <ul class=\"icons\">\n        <li><a target=\"_blank\" href=\"https://www.facebook.com/Art-Code-707082972822925/\" class=\"icon fa-facebook\"><span class=\"label\">Facebook</span></a></li>\n        <li><a target=\"_blank\" href=\"https://www.instagram.com/_art_code_/\" class=\"icon fa-instagram\"><span class=\"label\">Instagram</span></a></li>\n        <li><a target=\"_blank\" href=\"https://github.com/MEmmanuel/art_code\" class=\"icon fa-github\"><span class=\"label\">GitHub</span></a></li>\n      </ul>\n  </div>\n\n  <!-- Footer -->\n  <footer id=\"footer\">\n    <p class=\"copyright\">Design: <a href=\"https://html5up.net\">HTML5 UP</a>.</p>\n  </footer>\n\n</div>\n\n<!-- BG -->\n<div id=\"bg\"></div>\n"
+module.exports = "<!-- Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Header -->\n  <header id=\"header\">\n    <div class=\"logo\">\n      <span class=\"icon fa-code\"></span>\n    </div>\n    <div class=\"content\">\n      <div class=\"inner\">\n        <h1>Art Code</h1>\n        <p>Art Code est un projet à but purement artistique.\n          Je créé des petits scripts permettant de dessiner des images animées,\n          jolies, parfois hypnotisantes. #CreativeCoding #javascript</p>\n      </div>\n    </div>\n    <nav>\n      <ul>\n        <li><a href=\"point_path\">Point path</a></li>\n        <li><a href=\"tangle\">Tangle</a></li>\n        <li><a href=\"attract\">Attract</a></li>\n        <li><a href=\"wall\">Wall</a></li>\n        <li><a href=\"link\">Link</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <div class=\"contact\">\n      <ul class=\"icons\">\n        <li><a target=\"_blank\" href=\"https://www.facebook.com/Art-Code-707082972822925/\" class=\"icon fa-facebook\"><span class=\"label\">Facebook</span></a></li>\n        <li><a target=\"_blank\" href=\"https://www.instagram.com/_art_code_/\" class=\"icon fa-instagram\"><span class=\"label\">Instagram</span></a></li>\n        <li><a target=\"_blank\" href=\"https://github.com/MEmmanuel/art_code\" class=\"icon fa-github\"><span class=\"label\">GitHub</span></a></li>\n      </ul>\n  </div>\n\n  <!-- Footer -->\n  <footer id=\"footer\">\n    <p class=\"copyright\">Design: <a href=\"https://html5up.net\">HTML5 UP</a>.</p>\n  </footer>\n\n</div>\n\n<!-- BG -->\n<div id=\"bg\"></div>\n"
 
 /***/ }),
 
@@ -302,6 +308,70 @@ var HomeComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/link/link.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/link/link.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"header\">\n  <h1><a href=\".\"><</a> Link</h1>\n</div>\n<iframe src=\"apps/link/index.html\"></iframe>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/link/link.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_window__ = __webpack_require__("../../../../../src/app/providers/window.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LinkComponent = (function () {
+    function LinkComponent(window) {
+        this.window = window;
+        this.window.nativeWindow.mixpanel.track("Link: Page start");
+    }
+    LinkComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'; };
+    LinkComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+            selector: 'app-link',
+            template: __webpack_require__("../../../../../src/app/pages/link/link.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/pages/link/link.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_window__["a" /* WindowRef */]])
+    ], LinkComponent);
+    return LinkComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/point_path/point_path.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -323,7 +393,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/point_path/point_path.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<iframe src=\"apps/point_path/index.html\"></iframe>\n"
+module.exports = "<div class=\"header\">\n  <h1><a href=\".\"><</a> Point path</h1>\n</div>\n<iframe src=\"apps/point_path/index.html\"></iframe>\n"
 
 /***/ }),
 
@@ -350,7 +420,7 @@ var PointPathComponent = (function () {
         this.window = window;
         this.window.nativeWindow.mixpanel.track("Point_path: Page start");
     }
-    PointPathComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'; };
+    PointPathComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'; };
     PointPathComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
             selector: 'app-point-path',
@@ -387,7 +457,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/tangle/tangle.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<iframe src=\"apps/tangle/index.html\"></iframe>\n"
+module.exports = "<div class=\"header\">\n  <h1><a href=\".\"><</a> Tangle</h1>\n</div>\n<iframe src=\"apps/tangle/index.html\"></iframe>\n"
 
 /***/ }),
 
@@ -414,7 +484,7 @@ var TangleComponent = (function () {
         this.window = window;
         this.window.nativeWindow.mixpanel.track("Tangle: Page start");
     }
-    TangleComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'; };
+    TangleComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'; };
     TangleComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
             selector: 'app-tangle',
@@ -451,7 +521,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/wall/wall.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<iframe src=\"apps/wall/index.html\"></iframe>\n"
+module.exports = "<div class=\"header\">\n  <h1><a href=\".\"><</a> Wall</h1>\n</div>\n<iframe src=\"apps/wall/index.html\"></iframe>\n"
 
 /***/ }),
 
@@ -478,7 +548,7 @@ var WallComponent = (function () {
         this.window = window;
         this.window.nativeWindow.mixpanel.track("Wall: Page start");
     }
-    WallComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'; };
+    WallComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'; };
     WallComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
             selector: 'app-wall',
