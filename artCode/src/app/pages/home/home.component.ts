@@ -7,9 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
-    // window.mixpanel.track("Index: Page start");
-  }
+  constructor() {window.mixpanel.track("Home: Page start")}
 
   ngOnInit() {}
 }

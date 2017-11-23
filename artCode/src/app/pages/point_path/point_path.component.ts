@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PointPathComponent implements OnInit {
 
-  constructor() {}
+  constructor() {window.mixpanel.track("Point_path: Page start")}
 
   ngOnInit() {document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'}
 }

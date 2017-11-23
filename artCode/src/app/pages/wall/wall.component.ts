@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class WallComponent implements OnInit {
 
-  constructor() {}
+  constructor() {window.mixpanel.track("Wall: Page start")}
 
   ngOnInit() {document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'}
 }

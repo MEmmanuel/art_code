@@ -1,5 +1,3 @@
-mixpanel.track("Tangle: Page start");
-
 var ANGLE = -3;
 var X_NUMBER = 100;
 var Y_NUMBER = 10;
