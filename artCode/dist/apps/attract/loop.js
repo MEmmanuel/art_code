@@ -1,5 +1,3 @@
-mixpanel.track("Attract: Page start");
-
 var body = document.getElementsByTagName('body')[0];
 
 var controller = new Controller(body, window);

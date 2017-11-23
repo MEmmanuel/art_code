@@ -1,6 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+import {WindowRef} from './providers/window';
+
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './/app-routing.module';
 import {HomeComponent} from './pages/home/home.component';
@@ -17,7 +19,7 @@ import {WallComponent} from './pages/wall/wall.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

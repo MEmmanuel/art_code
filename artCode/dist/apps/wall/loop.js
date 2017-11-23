@@ -1,5 +1,3 @@
-mixpanel.track("Wall: Page start");
-
 var body = document.getElementsByTagName('body')[0];
 
 var controller = new Controller(body, window);

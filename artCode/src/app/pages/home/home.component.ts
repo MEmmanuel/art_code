@@ -1,3 +1,4 @@
+import {WindowRef} from '../../providers/window';
 import {Component, OnInit} from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {window.mixpanel.track("Home: Page start")}
+  constructor(private window: WindowRef) {this.window.nativeWindow.mixpanel.track("Home: Page start")}
 
   ngOnInit() {}
 }

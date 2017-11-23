@@ -1,3 +1,4 @@
+import {WindowRef} from '../../providers/window';
 import {Component, OnInit} from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AttractComponent implements OnInit {
 
-  constructor() {window.mixpanel.track("Attract: Page start")}
+  constructor(private window: WindowRef) {this.window.nativeWindow.mixpanel.track("Attract: Page start")}
 
   ngOnInit() {document.getElementsByTagName('iframe')[0].style.height = window.innerHeight + 'px'}
 }
