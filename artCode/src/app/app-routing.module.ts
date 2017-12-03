@@ -7,6 +7,7 @@ import {TangleComponent}      from './pages/tangle/tangle.component';
 import {AttractComponent}      from './pages/attract/attract.component';
 import {WallComponent}      from './pages/wall/wall.component';
 import {LinkComponent}      from './pages/link/link.component';
+import {BounceComponent}      from './pages/bounce/bounce.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'attract', component: AttractComponent},
   {path: 'wall', component: WallComponent},
   {path: 'link', component: LinkComponent},
+  {path: 'bounce', component: BounceComponent},
 ];
 
 @NgModule({
