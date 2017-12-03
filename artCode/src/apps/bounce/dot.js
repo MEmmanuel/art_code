@@ -45,8 +45,8 @@ class Dot {
             xA += v[0]/100;
             yA += v[1]/100;
         }
-        xA -= FRICTION * this.xSpeed / 10;
-        yA -= FRICTION * this.ySpeed / 10;
+        xA -= FRICTION * this.xSpeed / 100;
+        yA -= FRICTION * this.ySpeed / 100;
         this.xSpeed += xA/this.weight;
         this.ySpeed += yA/this.weight;
     }

@@ -66,17 +66,17 @@ class Controller {
         var dot1 = this.findNearest(this.dots[this._calculationIndex]);
         if (dot1) {
             var dot2 = this.dots[this._calculationIndex];
-            var e1 = dot1.xSpeed**2+dot1.ySpeed**2;
-            var e2 = dot2.xSpeed**2+dot2.ySpeed**2;
+            var e1 = dot1.xSpeed*dot1.xSpeed+dot1.ySpeed*dot1.ySpeed;
+            var e2 = dot2.xSpeed*dot2.xSpeed+dot2.ySpeed*dot2.ySpeed;
             if (e1 > e2) {
                 var p = -this.forceInput.value * e2 / 100;
-                var r = dot2.xSpeed**2 / e2;
-                dot1.xSpeed = Math.sqrt(dot1.xSpeed**2 - r*p) * Math.abs(dot1.xSpeed) / dot1.xSpeed;
-                dot1.ySpeed = Math.sqrt(dot1.ySpeed**2 - (1-r)*p) * Math.abs(dot1.ySpeed) / dot1.ySpeed;
-                dot2.xSpeed = Math.sqrt(dot2.xSpeed**2 + r*p) * Math.abs(dot2.xSpeed) / dot2.xSpeed;
-                dot2.ySpeed = Math.sqrt(dot2.ySpeed**2 + (1-r)*p) * Math.abs(dot2.ySpeed) / dot2.ySpeed;
+                var r = dot2.xSpeed*dot2.xSpeed / e2;
+                dot1.xSpeed = Math.sqrt(dot1.xSpeed*dot1.xSpeed - r*p) * Math.abs(dot1.xSpeed) / dot1.xSpeed;
+                dot1.ySpeed = Math.sqrt(dot1.ySpeed*dot1.ySpeed - (1-r)*p) * Math.abs(dot1.ySpeed) / dot1.ySpeed;
+                dot2.xSpeed = Math.sqrt(dot2.xSpeed*dot2.xSpeed + r*p) * Math.abs(dot2.xSpeed) / dot2.xSpeed;
+                dot2.ySpeed = Math.sqrt(dot2.ySpeed*dot2.ySpeed + (1-r)*p) * Math.abs(dot2.ySpeed) / dot2.ySpeed;
 
-                e2 = dot2.xSpeed**2+dot2.ySpeed**2;
+                e2 = dot2.xSpeed*dot2.xSpeed+dot2.ySpeed*dot2.ySpeed;
                 if (e2 > this._maxEnergy) {this._maxEnergy = e2}
                 dot2.opacity = e2/this._maxEnergy;
                 if (e2*10000 < DEATH_LIMIT) {
@@ -90,13 +90,13 @@ class Controller {
             }
             else if (e1 < e2) {
                 var p = -this.forceInput.value * e1 / 100;
-                var r = dot1.xSpeed**2 / e1;
-                dot1.xSpeed = Math.sqrt(dot1.xSpeed**2 + r*p) * Math.abs(dot1.xSpeed) / dot1.xSpeed;
-                dot1.ySpeed = Math.sqrt(dot1.ySpeed**2 + (1-r)*p) * Math.abs(dot1.ySpeed) / dot1.ySpeed;
-                dot2.xSpeed = Math.sqrt(dot2.xSpeed**2 - r*p) * Math.abs(dot2.xSpeed) / dot2.xSpeed;
-                dot2.ySpeed = Math.sqrt(dot2.ySpeed**2 - (1-r)*p) * Math.abs(dot2.ySpeed) / dot2.ySpeed;
+                var r = dot1.xSpeed*dot1.xSpeed / e1;
+                dot1.xSpeed = Math.sqrt(dot1.xSpeed*dot1.xSpeed + r*p) * Math.abs(dot1.xSpeed) / dot1.xSpeed;
+                dot1.ySpeed = Math.sqrt(dot1.ySpeed*dot1.ySpeed + (1-r)*p) * Math.abs(dot1.ySpeed) / dot1.ySpeed;
+                dot2.xSpeed = Math.sqrt(dot2.xSpeed*dot2.xSpeed - r*p) * Math.abs(dot2.xSpeed) / dot2.xSpeed;
+                dot2.ySpeed = Math.sqrt(dot2.ySpeed*dot2.ySpeed - (1-r)*p) * Math.abs(dot2.ySpeed) / dot2.ySpeed;
 
-                e1 = dot1.xSpeed**2+dot1.ySpeed**2;
+                e1 = dot1.xSpeed*dot1.xSpeed+dot1.ySpeed*dot1.ySpeed;
             }
         }
 

@@ -67,7 +67,7 @@ class Line {
         ];
         this.div.style.left = Math.round(v[0]) + 'px';
         this.div.style.top = Math.round(v[1]) + 'px';
-        this.div.style.width = Math.round(Math.sqrt((v[3] - v[1])**2 + (v[2] - v[0])**2)) + 'px';
+        this.div.style.width = Math.round(Math.sqrt((v[3] - v[1])*(v[3] - v[1]) + (v[2] - v[0])*(v[2] - v[0]))) + 'px';
         var r;
         if (v[0] == v[2]) {
             r = 90 * Math.abs(v[2] - v[0]) / (v[2] - v[0]);
