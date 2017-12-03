@@ -8,7 +8,7 @@ document.body.onmousemove = controller.move;
 //     controller.move(e);
 // }, false);
 document.body.onclick = function (e) {controller.click(e)};
-document.addEventListener('click', function(e) {
+// document.addEventListener('click', function(e) {
 //     e.preventDefault();
 //     controller.click(e);
 // }, false);
