@@ -20,7 +20,6 @@ class Controller {
                 Math.random()*window.innerHeight, Math.random()*window.innerWidth,
                 [200, 200, 200], [Math.random()*2*V_MAX-V_MAX, Math.random()*2*V_MAX-V_MAX],
                 Math.random()*(MAX_WEIGHT-MIN_WEIGHT)+MIN_WEIGHT));
-                // getRandomColor(255*2), [Math.random()*2*V_MAX-V_MAX, Math.random()*2*V_MAX-V_MAX]));
         }
         var x0 = Math.random()*Math.min(window.innerWidth, window.innerHeight);
         for (var i=0; i<DOTS_NUMBER; i++) {
@@ -59,8 +58,10 @@ class Controller {
             this.dots[i].bgColor = [255, 255, 255];
         }
         else {
-            this.dots[this.dragging].bgColor = [200, 200, 200];
-            this.dragging = undefined;
+            if (this.dragging && this.dots[this.dragging]) {
+                this.dots[this.dragging].bgColor = [200, 200, 200];
+                this.dragging = undefined;
+            }
         }
     }
 

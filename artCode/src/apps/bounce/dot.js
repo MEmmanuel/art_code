@@ -44,8 +44,8 @@ class Dot {
         var yA = 0;
         for (var i=0; i<this.linkedLines.length; i++) {
             var v = this.linkedLines[i].getForceVector(this.id);
-            xA += v[0]/100;
-            yA += v[1]/100;
+            xA += v[0]/50;
+            yA += v[1]/50;
         }
         xA -= FRICTION * this.xSpeed / 100;
         yA -= FRICTION * this.ySpeed / 100;
