@@ -11,11 +11,12 @@ import {PointPathComponent} from './pages/point_path/point_path.component';
 import {TangleComponent} from './pages/tangle/tangle.component';
 import {WallComponent} from './pages/wall/wall.component';
 import {LinkComponent} from './pages/link/link.component';
+import {BounceComponent} from './pages/bounce/bounce.component';
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, AttractComponent, PointPathComponent,
-    TangleComponent, WallComponent, LinkComponent
+    TangleComponent, WallComponent, LinkComponent, BounceComponent
   ],
   imports: [
     BrowserModule,
