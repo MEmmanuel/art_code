@@ -44,9 +44,35 @@ class Controller {
         this.dots[r].ySpeed += Math.random()*10*this.dots[r].ySpeed/Math.abs(this.dots[r].ySpeed);
     };
 
+    startDrag(t, x, y) {
+        if (x !== 0 && y !== 0) {
+            var i = parseInt(t.id);
+            this.dragging = i;
+        }
+    }
+
+    drag(t, x, y) {
+        if (x !== 0 && y !== 0) {
+            var i = parseInt(t.id);
+            this.dots[i].div.style.left = x - this.dots[i].weight/2 + 'px';
+            this.dots[i].div.style.top = y - this.dots[i].weight/2 + 'px';
+            this.dots[i].bgColor = [255, 255, 255];
+        }
+        else {
+            this.dots[this.dragging].bgColor = [200, 200, 200];
+            this.dragging = undefined;
+        }
+    }
+
+    endDrag() {
+        this.dragging = undefined;
+    }
+
     render() {
         for (var i=0; i<this.dots.length; i++) {
-            this.dots[i].updatePosition(window.innerWidth, window.innerHeight);
+            if (i !== this.dragging) {
+                this.dots[i].updatePosition(window.innerWidth, window.innerHeight);
+            }
         }
         for (var i=0; i<this.dots.length; i++) {
             var d = this.dots[i];

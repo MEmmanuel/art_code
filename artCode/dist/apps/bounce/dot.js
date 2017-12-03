@@ -2,7 +2,9 @@ class Dot {
     constructor(id, container, top, left, bgColor, speedVector, weight) {
         this.id = id;
         this.div = document.createElement('div');
+        this.div.id = id;
         this.div.classList.add('dot');
+        this.div.draggable = true;
         container.appendChild(this.div);
         this.top = top;
         this.left = left;
