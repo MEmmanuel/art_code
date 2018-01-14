@@ -1,0 +1,6 @@
+WALL:
+- fails when dropping wall
+
+LINK:
+- no link...
+
