@@ -150,12 +150,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_link_link_component__ = __webpack_require__("../../../../../src/app/pages/link/link.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_bounce_bounce_component__ = __webpack_require__("../../../../../src/app/pages/bounce/bounce.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_pulse_pulse_component__ = __webpack_require__("../../../../../src/app/pages/pulse/pulse.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_square_square_component__ = __webpack_require__("../../../../../src/app/pages/square/square.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -176,7 +178,7 @@ var AppModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__pages_home_home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_6__pages_attract_attract_component__["a" /* AttractComponent */], __WEBPACK_IMPORTED_MODULE_7__pages_point_path_point_path_component__["a" /* PointPathComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tangle_tangle_component__["a" /* TangleComponent */], __WEBPACK_IMPORTED_MODULE_9__pages_wall_wall_component__["a" /* WallComponent */], __WEBPACK_IMPORTED_MODULE_10__pages_link_link_component__["a" /* LinkComponent */], __WEBPACK_IMPORTED_MODULE_11__pages_bounce_bounce_component__["a" /* BounceComponent */], __WEBPACK_IMPORTED_MODULE_12__pages_pulse_pulse_component__["a" /* PulseComponent */]
+                __WEBPACK_IMPORTED_MODULE_8__pages_tangle_tangle_component__["a" /* TangleComponent */], __WEBPACK_IMPORTED_MODULE_9__pages_wall_wall_component__["a" /* WallComponent */], __WEBPACK_IMPORTED_MODULE_10__pages_link_link_component__["a" /* LinkComponent */], __WEBPACK_IMPORTED_MODULE_11__pages_bounce_bounce_component__["a" /* BounceComponent */], __WEBPACK_IMPORTED_MODULE_12__pages_pulse_pulse_component__["a" /* PulseComponent */], __WEBPACK_IMPORTED_MODULE_13__pages_square_square_component__["a" /* SquareComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
