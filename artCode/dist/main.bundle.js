@@ -32,12 +32,14 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_link_link_component__ = __webpack_require__("../../../../../src/app/pages/link/link.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_bounce_bounce_component__ = __webpack_require__("../../../../../src/app/pages/bounce/bounce.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_pulse_pulse_component__ = __webpack_require__("../../../../../src/app/pages/pulse/pulse.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_square_square_component__ = __webpack_require__("../../../../../src/app/pages/square/square.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -57,6 +59,7 @@ var routes = [
     { path: 'link', component: __WEBPACK_IMPORTED_MODULE_7__pages_link_link_component__["a" /* LinkComponent */] },
     { path: 'bounce', component: __WEBPACK_IMPORTED_MODULE_8__pages_bounce_bounce_component__["a" /* BounceComponent */] },
     { path: 'pulse', component: __WEBPACK_IMPORTED_MODULE_9__pages_pulse_pulse_component__["a" /* PulseComponent */] },
+    { path: 'square', component: __WEBPACK_IMPORTED_MODULE_10__pages_square_square_component__["a" /* SquareComponent */] },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -568,6 +571,70 @@ var PulseComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_window__["a" /* WindowRef */]])
     ], PulseComponent);
     return PulseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/square/square.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/square/square.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"header\">\n  <h1><a href=\".\"><</a> Square</h1>\n</div>\n<iframe src=\"apps/square/index.html\"></iframe>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/square/square.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SquareComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_window__ = __webpack_require__("../../../../../src/app/providers/window.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SquareComponent = (function () {
+    function SquareComponent(window) {
+        this.window = window;
+        this.window.nativeWindow.mixpanel.track("Square: Page start");
+    }
+    SquareComponent.prototype.ngOnInit = function () { document.getElementsByTagName('iframe')[0].style.height = window.innerHeight - 50 + 'px'; };
+    SquareComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+            selector: 'app-square',
+            template: __webpack_require__("../../../../../src/app/pages/square/square.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/pages/square/square.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_window__["a" /* WindowRef */]])
+    ], SquareComponent);
+    return SquareComponent;
 }());
 
 

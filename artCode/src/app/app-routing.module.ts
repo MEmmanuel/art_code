@@ -9,6 +9,7 @@ import {WallComponent}      from './pages/wall/wall.component';
 import {LinkComponent}      from './pages/link/link.component';
 import {BounceComponent}      from './pages/bounce/bounce.component';
 import {PulseComponent}      from './pages/pulse/pulse.component';
+import {SquareComponent}      from './pages/square/square.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'link', component: LinkComponent},
   {path: 'bounce', component: BounceComponent},
   {path: 'pulse', component: PulseComponent},
+  {path: 'square', component: SquareComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,3 @@
+RENDER_DELAY = 10+Math.random()*100;
+SQUARE_COUNT = 10+Math.random()*40;
+LIGHT_LEVEL_STEP = RENDER_DELAY/10;
