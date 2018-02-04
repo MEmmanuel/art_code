@@ -1,0 +1,5 @@
+DOT_SIZE = 8;
+RENDER_DELAY = 50;
+V_MAX = 20;
+G = 9.81;
+FRICTION = 5;
