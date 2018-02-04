@@ -12,3 +12,29 @@
   display: inline;
   margin: 0 5px;
 }
+
+nav {
+  margin-top: 2.5rem !important;
+}
+
+nav:before {
+  height: calc(2.5rem + 1px) !important;
+  top: calc(-2.5rem - 1px) !important;
+  left: calc(50% - 0px) !important;
+}
+
+#nav2:before {
+  height: calc(1.5rem + 1px) !important;
+  top: calc(-1.5rem - 1px) !important;
+}
+#nav2 {
+  margin-top: 1.5rem !important;
+}
+
+#header .content .inner {
+  padding: 2.8rem 2rem !important;
+}
+
+#header nav ul li {
+  width: 150px;
+}
