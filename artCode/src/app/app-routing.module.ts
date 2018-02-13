@@ -2,14 +2,15 @@ import {NgModule}             from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {HomeComponent}      from './pages/home/home.component';
-import {PointPathComponent}      from './pages/point_path/point_path.component';
-import {TangleComponent}      from './pages/tangle/tangle.component';
-import {AttractComponent}      from './pages/attract/attract.component';
+import {PointPathComponent} from './pages/point_path/point_path.component';
+import {TangleComponent}    from './pages/tangle/tangle.component';
+import {AttractComponent}   from './pages/attract/attract.component';
 import {WallComponent}      from './pages/wall/wall.component';
 import {LinkComponent}      from './pages/link/link.component';
-import {BounceComponent}      from './pages/bounce/bounce.component';
-import {PulseComponent}      from './pages/pulse/pulse.component';
-import {SquareComponent}      from './pages/square/square.component';
+import {BounceComponent}    from './pages/bounce/bounce.component';
+import {PulseComponent}     from './pages/pulse/pulse.component';
+import {SquareComponent}    from './pages/square/square.component';
+import {StackComponent}     from './pages/stack/component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'bounce', component: BounceComponent},
   {path: 'pulse', component: PulseComponent},
   {path: 'square', component: SquareComponent},
+  {path: 'stack', component: StackComponent},
 ];
 
 @NgModule({
