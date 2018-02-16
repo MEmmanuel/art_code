@@ -7,6 +7,7 @@ class Line {
         this.position = [x1, y1, x2, y2];
         this.bgColor = bgColor;
         this.opacity = 1;
+        this.div.style.height = '1px'
     }
 
     remove() {
