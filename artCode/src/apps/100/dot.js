@@ -67,9 +67,12 @@ class Dot {
 
     getForceVector(dot) {
         const d = Math.sqrt((dot.top-this.top)*(dot.top-this.top)+(dot.left-this.left)*(dot.left-this.left));
+
+        if (d > MAX_DISTANCE_CALCULATION) {return [0, 0]}
+
         let value = G * dot.mass * this.mass / d / d / 10;
         if (value > 20) {value = 20}
-      // console.log(value);
+
         var angle;
         if (dot.left === this.left) {angle = 90 * Math.abs(dot.top-this.top)}
         else {angle = -Math.atan((this.top-dot.top)/(this.left-dot.left))}
