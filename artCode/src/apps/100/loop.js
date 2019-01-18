@@ -4,7 +4,7 @@ const req = new XMLHttpRequest();
 req.open('GET', 'https://www.instagram.com/_art_code_/', false);
 req.send(null);
 
-var followersCount = 107;
+var followersCount = 136;
 if (req.status === 200) {
   followersCount = JSON.parse(req.responseText.split('window._sharedData = ')[1].split(';</script>')[0]).entry_data.ProfilePage[0].graphql.user.edge_followed_by.count;
 }
