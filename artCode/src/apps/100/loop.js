@@ -6,7 +6,7 @@ req.send(null);
 
 var followersCount = 107;
 if (req.status === 200) {
-  followersCount = JSON.parse(req.responseText.split('window._sharedData = ')[1].split(';</script>')[0]).entry_data.ProfilePage[0].user.followed_by.count;
+  followersCount = JSON.parse(req.responseText.split('window._sharedData = ')[1].split(';</script>')[0]).entry_data.ProfilePage[0].graphql.user.edge_followed_by.count;
 }
 
 var controller = new Controller(body, window, followersCount);
