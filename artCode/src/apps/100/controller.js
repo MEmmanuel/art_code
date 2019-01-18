@@ -40,7 +40,8 @@ class Controller {
             var dList = numbers[parseInt((this.followersCount+'')[j])];
             for (var k=0; k<dList.length; k++) {
                 this.fixedDots.push(new Dot(this.fixedDots.length, this.container,
-                  startPosY+dList[k][0]*HEIGHT/100, (WIDTH + SPACE)*j + startPosX+dList[k][1]*WIDTH/100,
+                  startPosY + dList[k][0] * HEIGHT / 100,
+                  (WIDTH + SPACE) * j + startPosX + dList[k][1] * WIDTH / 100,
                   [0, 0, 0], [0, 0], 5000, true));
             }
         }
