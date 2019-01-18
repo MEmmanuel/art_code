@@ -15,10 +15,11 @@ import {BounceComponent} from './pages/bounce/bounce.component';
 import {PulseComponent} from './pages/pulse/pulse.component';
 import {SquareComponent} from './pages/square/square.component';
 import {StackComponent} from './pages/stack/component';
+import {TrainsComponent} from './pages/trains/trains.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, AttractComponent, PointPathComponent, StackComponent,
+    AppComponent, HomeComponent, AttractComponent, PointPathComponent, StackComponent, TrainsComponent,
     TangleComponent, WallComponent, LinkComponent, BounceComponent, PulseComponent, SquareComponent
   ],
   imports: [

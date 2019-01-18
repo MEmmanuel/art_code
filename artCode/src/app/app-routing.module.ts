@@ -11,6 +11,7 @@ import {BounceComponent}    from './pages/bounce/bounce.component';
 import {PulseComponent}     from './pages/pulse/pulse.component';
 import {SquareComponent}    from './pages/square/square.component';
 import {StackComponent}     from './pages/stack/component';
+import {TrainsComponent}     from './pages/trains/trains.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'pulse', component: PulseComponent},
   {path: 'square', component: SquareComponent},
   {path: 'stack', component: StackComponent},
+  {path: 'trains', component: TrainsComponent},
 ];
 
 @NgModule({
