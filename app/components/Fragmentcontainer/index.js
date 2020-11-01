@@ -11,7 +11,8 @@ import styled from 'styled-components';
 const Container = styled.div`
   overflow: hidden;
   position: relative;
-  height: calc(100vh - 64px);
+  background-color: black;
+  height: calc(100vh - 48px);
 `;
 
 function Fragmentcontainer(props) {
