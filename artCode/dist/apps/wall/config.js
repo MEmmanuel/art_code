@@ -1,3 +1,0 @@
-DOT_SIZE = 8;
-RENDER_DELAY = 20;
-V_MAX = 100;

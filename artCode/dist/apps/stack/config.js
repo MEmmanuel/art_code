@@ -1,2 +1,0 @@
-RENDER_DELAY = 200;
-SQUARE_COUNT = 20+Math.random()*30;
