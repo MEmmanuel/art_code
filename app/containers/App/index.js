@@ -41,11 +41,6 @@ const fragments = [
     header: () => <div>Trains</div>,
     component: () => <TrainsPage />,
   },
-  {
-    path: '/fake-trains',
-    header: () => <div>Fake Trains</div>,
-    component: () => <TrainsPage />,
-  },
 ];
 
 export default function App() {

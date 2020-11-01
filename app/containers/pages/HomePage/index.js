@@ -12,10 +12,11 @@ import messages from './messages';
 
 export default function HomePage() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
+    <div>
+      <h1>
+        <FormattedMessage {...messages.header} />
+      </h1>
       <Link to="/trains">Trains</Link>
-      <Link to="/fake-trains">fakeTrains</Link>
-    </h1>
+    </div>
   );
 }
