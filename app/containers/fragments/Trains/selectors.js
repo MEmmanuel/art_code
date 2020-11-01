@@ -22,6 +22,24 @@ const selectAllTrains = () =>
     substate => substate.trains,
   );
 
+const selectLastTrainId = () =>
+  createSelector(
+    selectTrainsDomain,
+    substate =>
+      substate.trains
+        .map(train => train.id)
+        .reduce((m, i) => (m <= i ? i : m), 0),
+  );
+
+const selectTrainById = id =>
+  createSelector(
+    selectTrainsDomain,
+    substate => {
+      const filteredTrains = substate.trains.filter(train => train.id === id);
+      return filteredTrains.length ? filteredTrains[0] : undefined;
+    },
+  );
+
 /**
  * Default selector used by Trains
  */
@@ -33,4 +51,10 @@ const makeSelectTrains = () =>
   );
 
 export default makeSelectTrains;
-export { selectTrainsDomain, selectTrainsIsLooping, selectAllTrains };
+export {
+  selectTrainsDomain,
+  selectTrainsIsLooping,
+  selectAllTrains,
+  selectTrainById,
+  selectLastTrainId,
+};

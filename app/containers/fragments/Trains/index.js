@@ -38,6 +38,7 @@ export class Trains extends React.Component {
             height={20}
             bgColor={train.bgColor}
             position={train.position}
+            speed={train.speed}
           />
         ))}
       </React.Fragment>

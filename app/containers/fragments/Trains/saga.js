@@ -2,19 +2,20 @@
  * Make the trains appear and move
  */
 
-import { put, select, takeLatest, delay } from 'redux-saga/effects';
+import { put, select, takeLatest, delay, takeEvery } from 'redux-saga/effects';
 import {
   START_LOOP,
   LOOP,
   LOOP_DELAY,
-  TRAIN_CREATION_RATE,
   CREATE_TRAIN,
+  MOVE_TRAIN,
 } from './constants';
-import { loop, createTrain } from './actions';
-import { selectTrainsIsLooping } from './selectors';
-
-// import request from 'utils/request';
-// import { makeSelectUsername } from 'containers/HomePage/selectors';
+import { loop, createTrain, moveTrain, removeTrain } from './actions';
+import {
+  selectLastTrainId,
+  selectTrainsIsLooping,
+  selectTrainById,
+} from './selectors';
 
 /**
  * Start the loop
@@ -28,33 +29,36 @@ export function* startLoopSaga() {
  */
 export function* loopSaga() {
   const isLooping = yield select(selectTrainsIsLooping());
+  const newId = (yield select(selectLastTrainId())) + 1;
   if (isLooping) {
-    for (let i = 0; i < TRAIN_CREATION_RATE; i += 1) {
-      yield put(createTrain());
-    }
+    yield put(createTrain(newId));
     yield delay(LOOP_DELAY);
     yield put(loop());
   }
 }
 
 /**
- * Create some trains
+ * After train has been created
  */
 export function* createTrainSaga() {
-  yield undefined;
+  yield delay(10);
+  const lastTrainId = yield select(selectLastTrainId());
+  const train = yield select(selectTrainById(lastTrainId));
+  yield put(moveTrain(train, { ...train.position, x: 100 }));
+}
+
+/**
+ * After train has been moved
+ */
+export function* moveTrainSaga(payload) {
+  yield delay(10000);
+  yield put(removeTrain(payload.train.id));
 }
 
 // Individual exports for testing
 export default function* trainsSaga() {
-  // Watches for LOAD_REPOS actions and calls createTrains when one comes in.
-  // By using `takeLatest` only the result of the latest API call is applied.
-  // It returns task descriptor (just like fork) so we can continue execution
-  // It will be cancelled automatically on component unmount
   yield takeLatest(START_LOOP, startLoopSaga);
   yield takeLatest(LOOP, loopSaga);
   yield takeLatest(CREATE_TRAIN, createTrainSaga);
+  yield takeEvery(MOVE_TRAIN, moveTrainSaga);
 }
-
-// créer une saga "loop", qui attend 100ms, et se rappelle elle même.
-// créer une saga qui créé n trains, appelée par loop.
-// créer une saga qui supprime les trains arrivés au bout, appelée par loop.

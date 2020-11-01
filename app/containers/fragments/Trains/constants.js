@@ -4,7 +4,7 @@
  *
  */
 
-export const LOOP_DELAY = 1000;
+export const LOOP_DELAY = 500;
 
 export const TRAIN_COUNT = 5 + Math.random() * 10;
 
@@ -23,4 +23,5 @@ export const LOOP = 'LOOP';
 export const STOP_LOOP = 'STOP_LOOP';
 
 export const CREATE_TRAIN = 'CREATE_TRAIN';
-export const REMOVE_TRAINS = 'REMOVE_TRAINS';
+export const REMOVE_TRAIN = 'REMOVE_TRAIN';
+export const MOVE_TRAIN = 'MOVE_TRAIN';
