@@ -9,19 +9,20 @@ import styled from 'styled-components';
 
 import trainStyles from './trainStyles';
 
-const Train = styled.div`
-  ${trainStyles};
-  height: ${props => Math.round(props.height)}px;
-  width: ${props => Math.round(props.width)}px;
-  left: ${props => Math.round(props.position.x)}%;
-  top: ${props => Math.round(props.position.y)}%;
-  background-color: rgb(
-    ${props => props.bgColor[0]},
-    ${props => props.bgColor[1]},
-    ${props => props.bgColor[2]}
-  );
-  border-radius: ${props => Math.round(props.height / 2)}px;
-  transition: left ${props => 10 - Math.round(props.speed)}s linear;
+const Train = styled.div.attrs(props => ({
+  style: {
+    height: `${Math.round(props.height)}px`,
+    width: `${Math.round(props.width)}px`,
+    left: `${Math.round(props.position.x)}%`,
+    top: `${Math.round(props.position.y)}%`,
+    borderRadius: `${Math.round(props.height / 2)}px`,
+    transition: `left ${10 - Math.round(props.speed)}s linear`,
+    backgroundColor: `rgb(${props.bgColor[0]}, ${props.bgColor[1]}, ${
+      props.bgColor[2]
+    })`,
+  },
+}))`
+  ${trainStyles}
 `;
 
 Train.propTypes = {

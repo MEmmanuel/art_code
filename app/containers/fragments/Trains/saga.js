@@ -9,6 +9,7 @@ import {
   LOOP_DELAY,
   CREATE_TRAIN,
   MOVE_TRAIN,
+  TRAIN_CREATION_RATE,
 } from './constants';
 import { loop, createTrain, moveTrain, removeTrain } from './actions';
 import {
@@ -31,7 +32,9 @@ export function* loopSaga() {
   const isLooping = yield select(selectTrainsIsLooping());
   const newId = (yield select(selectLastTrainId())) + 1;
   if (isLooping) {
-    yield put(createTrain(newId));
+    for (let i = 0; i < TRAIN_CREATION_RATE; i += 1) {
+      yield put(createTrain(newId + i));
+    }
     yield delay(LOOP_DELAY);
     yield put(loop());
   }
@@ -40,11 +43,12 @@ export function* loopSaga() {
 /**
  * After train has been created
  */
-export function* createTrainSaga() {
+export function* createTrainSaga(payload) {
   yield delay(10);
-  const lastTrainId = yield select(selectLastTrainId());
-  const train = yield select(selectTrainById(lastTrainId));
-  yield put(moveTrain(train, { ...train.position, x: 100 }));
+  const train = yield select(selectTrainById(payload.trainId));
+  if (train) {
+    yield put(moveTrain(train, { ...train.position, x: 100 }));
+  }
 }
 
 /**
@@ -59,6 +63,6 @@ export function* moveTrainSaga(payload) {
 export default function* trainsSaga() {
   yield takeLatest(START_LOOP, startLoopSaga);
   yield takeLatest(LOOP, loopSaga);
-  yield takeLatest(CREATE_TRAIN, createTrainSaga);
+  yield takeEvery(CREATE_TRAIN, createTrainSaga);
   yield takeEvery(MOVE_TRAIN, moveTrainSaga);
 }

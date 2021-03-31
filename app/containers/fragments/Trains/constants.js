@@ -4,19 +4,17 @@
  *
  */
 
-export const LOOP_DELAY = 500;
-
-export const TRAIN_COUNT = 5 + Math.random() * 10;
+export const LOOP_DELAY = 1000;
 
 export const TRAIN_HEIGHT = 20;
 
 export const MIN_TRAIN_WIDTH = 100;
 export const MAX_TRAIN_WIDTH = 200;
 
-export const MIN_TRAIN_SPEED = 1;
-export const MAX_TRAIN_SPEED = 3;
+export const MIN_TRAIN_SPEED = 5;
+export const MAX_TRAIN_SPEED = 8;
 
-export const TRAIN_CREATION_RATE = 1;
+export const TRAIN_CREATION_RATE = 5;
 
 export const START_LOOP = 'START_LOOP';
 export const LOOP = 'LOOP';

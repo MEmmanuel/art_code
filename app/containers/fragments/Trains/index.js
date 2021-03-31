@@ -27,6 +27,10 @@ export class Trains extends React.Component {
     this.props.dispatch(stopLoop());
   }
 
+  shouldComponentUpdate(nextProps) {
+    return this.props.trains.length !== nextProps.trains.length;
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -34,7 +38,6 @@ export class Trains extends React.Component {
           <Train
             key={train.id}
             width={train.width}
-            name={train}
             height={20}
             bgColor={train.bgColor}
             position={train.position}
