@@ -9,7 +9,7 @@ const birdStyles = css`
   border-bottom: 44px solid transparent;
   border-left: 20px solid transparent;
   transform-origin: center;
-  transition: left 0.5s linear, top 0.5s linear;
+  transition: left 0.5s linear, top 0.5s linear, transform 0.5s linear;
 `;
 
 export default birdStyles;
