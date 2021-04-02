@@ -16,7 +16,14 @@ export default function HomePage() {
       <h1>
         <FormattedMessage {...messages.header} />
       </h1>
-      <Link to="/trains">Trains</Link>
+      <ul>
+        <li>
+          <Link to="/trains">Trains</Link>
+        </li>
+        <li>
+          <Link to="/birds">Birds</Link>
+        </li>
+      </ul>
     </div>
   );
 }

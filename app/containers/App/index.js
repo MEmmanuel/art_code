@@ -11,6 +11,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/pages/HomePage/Loadable';
+import BirdsPage from 'containers/pages/BirdsPage/Loadable';
 import TrainsPage from 'containers/pages/TrainsPage/Loadable';
 import NotFoundPage from 'containers/pages/NotFoundPage/Loadable';
 
@@ -40,6 +41,11 @@ const fragments = [
     path: '/trains',
     header: () => <div>Trains</div>,
     component: () => <TrainsPage />,
+  },
+  {
+    path: '/birds',
+    header: () => <div>Birds</div>,
+    component: () => <BirdsPage />,
   },
 ];
 
