@@ -10,6 +10,7 @@ import {
   takeEvery,
   all,
 } from 'redux-saga/effects';
+import calculateDistance from 'utils/calculateDistance';
 import {
   START_LOOP,
   LOOP,
@@ -21,6 +22,7 @@ import {
   BIRD_RANDOM_MAX_ANGLE,
   ALIGNMENT_WEIGHT,
   BIRD_WEIGHT,
+  NEAREST_INFLUENCABLE_COUNT,
 } from './constants';
 import { loop, createBird, moveBird } from './actions';
 import {
@@ -48,19 +50,46 @@ export function* loopSaga() {
   if (isLooping) {
     const birds = yield select(selectAllBirds());
 
-    const meanAngle = birds.reduce(
-      ({ mean, count }, bird) => ({
-        mean: (mean * count + bird.angle) / (count + 1) || bird.angle,
-        count: count + 1,
-      }),
-      { mean: 0, count: 0 },
-    ).mean;
+    // align to others
+    const findNearest = (birdsList, referenceBird, countToFound) =>
+      birdsList
+        .sort(
+          (b1, b2) =>
+            calculateDistance(
+              b1.position.x,
+              b1.position.y,
+              referenceBird.position.x,
+              referenceBird.position.y,
+            ) <
+            calculateDistance(
+              b2.position.x,
+              b2.position.y,
+              referenceBird.position.x,
+              referenceBird.position.y,
+            ),
+        )
+        .slice(1, countToFound + 1);
+
+    const getMeanAngle = birdsList =>
+      birdsList.reduce(
+        ({ mean, count }, bird) => ({
+          mean: (mean * count + bird.angle) / (count + 1) || bird.angle,
+          count: count + 1,
+        }),
+        { mean: 0, count: 0 },
+      ).mean;
 
     let movedBirds = birds.map(b => {
+      const nearestBirds = findNearest(
+        [...birds],
+        birds[0],
+        NEAREST_INFLUENCABLE_COUNT,
+      );
+
       const newAngle =
         (b.angle +
           (Math.random() * 2 - 1) * BIRD_RANDOM_MAX_ANGLE +
-          (meanAngle * ALIGNMENT_WEIGHT) / 100) /
+          (getMeanAngle(nearestBirds) * ALIGNMENT_WEIGHT) / 100) /
         (1 + ALIGNMENT_WEIGHT / 100);
 
       return {
@@ -94,16 +123,16 @@ export function* loopSaga() {
       let { newAngle } = mb;
       const { newPosition } = mb;
 
-      if (newPosition.x <= 20) {
+      if (newPosition.x <= 10) {
         newAngle = calculateRepulsion(newAngle, 0, false);
       }
-      if (newPosition.x >= 80) {
+      if (newPosition.x >= 90) {
         newAngle = calculateRepulsion(newAngle, 0, true);
       }
-      if (newPosition.y <= 20) {
+      if (newPosition.y <= 10) {
         newAngle = calculateRepulsion(newAngle, -90, false);
       }
-      if (newPosition.y >= 80) {
+      if (newPosition.y >= 90) {
         newAngle = calculateRepulsion(newAngle, -90, true);
       }
 
