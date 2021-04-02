@@ -109,7 +109,7 @@ export function* loopSaga() {
 
       return {
         ...mb,
-        newAngle,
+        newAngle: newAngle % 360,
         newPosition,
       };
     });
