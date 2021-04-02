@@ -20,6 +20,7 @@ import {
   BIRD_SPEED,
   BIRD_RANDOM_MAX_ANGLE,
   ALIGNMENT_WEIGHT,
+  BIRD_WEIGHT,
 } from './constants';
 import { loop, createBird, moveBird } from './actions';
 import {
@@ -73,6 +74,43 @@ export function* loopSaga() {
             BIRD_SPEED * Math.cos((newAngle * 2 * Math.PI) / 360),
         },
         newAngle,
+      };
+    });
+
+    // repulsed by walls
+
+    const calculateRepulsion = (angle, offset, invert) => {
+      let intermediateValue = 180 - ((angle + offset + 90) % 360);
+
+      if (invert) {
+        intermediateValue *= -1;
+      }
+      return (
+        angle + (intermediateValue / Math.abs(intermediateValue)) * BIRD_WEIGHT
+      );
+    };
+
+    movedBirds = movedBirds.map(mb => {
+      let { newAngle } = mb;
+      const { newPosition } = mb;
+
+      if (newPosition.x <= 20) {
+        newAngle = calculateRepulsion(newAngle, 0, false);
+      }
+      if (newPosition.x >= 80) {
+        newAngle = calculateRepulsion(newAngle, 0, true);
+      }
+      if (newPosition.y <= 20) {
+        newAngle = calculateRepulsion(newAngle, -90, false);
+      }
+      if (newPosition.y >= 80) {
+        newAngle = calculateRepulsion(newAngle, -90, true);
+      }
+
+      return {
+        ...mb,
+        newAngle,
+        newPosition,
       };
     });
 
