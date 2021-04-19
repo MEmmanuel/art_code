@@ -16,6 +16,12 @@ const selectBirdsIsLooping = () =>
     substate => substate.isLooping,
   );
 
+const selectSliceStart = () =>
+  createSelector(
+    selectBirdsDomain,
+    substate => substate.sliceStart,
+  );
+
 const selectAllBirds = () =>
   createSelector(
     selectBirdsDomain,
@@ -52,6 +58,7 @@ export default makeSelectBirds;
 export {
   selectBirdsDomain,
   selectBirdsIsLooping,
+  selectSliceStart,
   selectAllBirds,
   selectBirdById,
   selectLastBirdId,

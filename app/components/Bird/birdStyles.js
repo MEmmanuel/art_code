@@ -5,11 +5,10 @@ const birdStyles = css`
   display: inline-block;
   height: 0;
   width: 0;
-  border-right: 20px solid transparent;
-  border-bottom: 44px solid transparent;
-  border-left: 20px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 5px solid transparent;
   transform-origin: center;
-  transition: left 0.5s linear, top 0.5s linear, transform 0.5s linear;
 `;
 
 export default birdStyles;

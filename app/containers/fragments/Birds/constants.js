@@ -4,7 +4,8 @@
  *
  */
 
-export const LOOP_DELAY = 250;
+export const LOOP_DELAY = 100;
+export const SLICE_SIZE = 5;
 
 export const BIRD_START_COUNT = 20;
 export const BIRD_SPEED = 5;
@@ -17,6 +18,7 @@ export const NEAREST_INFLUENCABLE_COUNT = 4;
 export const START_LOOP = 'START_LOOP';
 export const LOOP = 'LOOP';
 export const STOP_LOOP = 'STOP_LOOP';
+export const COMPUTE_NEXT_SLICE = 'COMPUTE_NEXT_SLICE';
 
 export const CREATE_BIRD = 'CREATE_BIRD';
 export const REMOVE_BIRD = 'REMOVE_BIRD';

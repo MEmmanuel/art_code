@@ -17,6 +17,7 @@ import { selectAllBirds } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import { startLoop, stopLoop } from './actions';
+import { SLICE_SIZE, LOOP_DELAY } from './constants';
 
 export class Birds extends React.Component {
   componentDidMount() {
@@ -39,6 +40,9 @@ export class Birds extends React.Component {
             position={bird.position}
             speed={bird.speed}
             angle={bird.angle}
+            transitionTime={
+              (this.props.birds.length * LOOP_DELAY) / SLICE_SIZE / 1000 + 0.1
+            }
           />
         ))}
       </React.Fragment>

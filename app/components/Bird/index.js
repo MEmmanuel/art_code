@@ -17,6 +17,9 @@ const Bird = styled.div.attrs(props => ({
       props.bgColor[2]
     })`,
     transform: `rotate(${props.angle || 0}deg`,
+    transition: `left ${props.transitionTime ||
+      1}s linear, top ${props.transitionTime ||
+      1}s linear, transform ${props.transitionTime || 1}s linear`,
   },
 }))`
   ${birdStyles}
@@ -29,6 +32,7 @@ Bird.propTypes = {
   }).isRequired,
   bgColor: PropTypes.arrayOf(PropTypes.number),
   angle: PropTypes.number,
+  transitionTime: PropTypes.number,
 };
 
 export default Bird;

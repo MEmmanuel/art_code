@@ -11,6 +11,7 @@ import {
   CREATE_BIRD,
   MOVE_BIRD,
   REMOVE_BIRD,
+  COMPUTE_NEXT_SLICE,
 } from './constants';
 
 /**
@@ -40,6 +41,16 @@ export function loop() {
 export function stopLoop() {
   return {
     type: STOP_LOOP,
+  };
+}
+
+/**
+ * Compute a slice of birds
+ * @return {object} An action object with a type of COMPUTE_NEXT_SLICE
+ */
+export function computeNextSlice() {
+  return {
+    type: COMPUTE_NEXT_SLICE,
   };
 }
 

@@ -11,6 +11,8 @@ import {
   STOP_LOOP,
   MOVE_BIRD,
   REMOVE_BIRD,
+  COMPUTE_NEXT_SLICE,
+  SLICE_SIZE,
 } from './constants';
 
 const makeNewBird = id => ({
@@ -20,7 +22,7 @@ const makeNewBird = id => ({
   angle: Math.random() * 360,
 });
 
-export const initialState = { isLooping: false, birds: [] };
+export const initialState = { isLooping: false, sliceStart: 0, birds: [] };
 
 /* eslint-disable default-case, no-param-reassign */
 const BirdsReducer = (state = initialState, action) =>
@@ -32,6 +34,12 @@ const BirdsReducer = (state = initialState, action) =>
       case STOP_LOOP:
         draft.isLooping = false;
         draft.birds = [];
+        break;
+      case COMPUTE_NEXT_SLICE:
+        draft.sliceStart =
+          draft.sliceStart + SLICE_SIZE > draft.birds.length
+            ? 0
+            : draft.sliceStart + SLICE_SIZE;
         break;
       case CREATE_BIRD:
         draft.birds.push(makeNewBird(action.birdId));
