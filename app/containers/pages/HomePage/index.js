@@ -23,6 +23,9 @@ export default function HomePage() {
         <li>
           <Link to="/birds">Birds</Link>
         </li>
+        <li>
+          <Link to="/heat">Heat</Link>
+        </li>
       </ul>
     </div>
   );

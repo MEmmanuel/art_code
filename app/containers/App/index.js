@@ -10,8 +10,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/pages/HomePage/Loadable';
 import BirdsPage from 'containers/pages/BirdsPage/Loadable';
+import HomePage from 'containers/pages/HomePage/Loadable';
+import HeatPage from 'containers/pages/HeatPage/Loadable';
 import TrainsPage from 'containers/pages/TrainsPage/Loadable';
 import NotFoundPage from 'containers/pages/NotFoundPage/Loadable';
 
@@ -46,6 +47,11 @@ const fragments = [
     path: '/birds',
     header: () => <div>Birds</div>,
     component: () => <BirdsPage />,
+  },
+  {
+    path: '/heat',
+    header: () => <div>Heat</div>,
+    component: () => <HeatPage />,
   },
 ];
 
